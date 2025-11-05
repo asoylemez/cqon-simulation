@@ -7,6 +7,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from cqon_model import CQONSimulation
 
+# TÜRKÇE KARAKTER DÜZELTMESİ - Bu satırları ekleyin
+plt.rcParams['font.family'] = 'DejaVu Sans'
+plt.rcParams['axes.unicode_minus'] = False
+
 
 def realistic_parameter_sweep():
     """Gerçekçi parametre taraması"""
@@ -16,32 +20,32 @@ def realistic_parameter_sweep():
     # Gerçekçi senaryolar - doğal sistemlere benzer
     scenarios = [
         {
-            "name": "OPTİMUM KUANTUM ORTAM",
-            "desc": "Düşük sıcaklık, yüksek koherans - laboratuvar koşulları",
+            "name": "OPTIMUM KUANTUM ORTAM",
+            "desc": "Dusuk sicaklik, yuksek koherans - laboratuvar kosullari",
             "alpha": 0.45, "gamma": 0.05, "T": 0.08, "K0": 1.1,
             "grid_size": 12, "total_time": 80, "dt": 0.2
         },
         {
-            "name": "ERKEN DÜNYA BENZERİ",
-            "desc": "Orta seviye gürültü - prebiyotik Dünya koşulları",
+            "name": "ERKEN DUNYA BENZERI",  # Türkçe karakter kaldırıldı
+            "desc": "Orta seviye gurultu - prebiyotik Dunya kosullari",
             "alpha": 0.35, "gamma": 0.07, "T": 0.15, "K0": 0.9,
             "grid_size": 12, "total_time": 100, "dt": 0.2
         },
         {
-            "name": "OKYANUS DİPİ KOŞULLARI",
-            "desc": "Yüksek basınç/kararlılık - hidrotermal bacalar",
+            "name": "OKYANUS DIPI KOSULLARI",
+            "desc": "Yuksek basinc/kararlilik - hidrotermal bacalar",
             "alpha": 0.38, "gamma": 0.04, "T": 0.12, "K0": 1.0,
             "grid_size": 12, "total_time": 120, "dt": 0.2
         },
         {
-            "name": "YÜKSEK GÜRÜLTÜLÜ ORTAM",
-            "desc": "Turbülanslı ortam - nehir ağızları, gelgit bölgeleri",
+            "name": "YUKSEK GURULTULU ORTAM",
+            "desc": "Turbulansli ortam - nehir agizlari, gelgit bolgeleri",
             "alpha": 0.28, "gamma": 0.10, "T": 0.22, "K0": 0.8,
             "grid_size": 12, "total_time": 100, "dt": 0.2
         },
         {
-            "name": "KRİTİK EŞİK TESTİ",
-            "desc": "Yaşam eşiğinde - teorik minimum koşullar",
+            "name": "KRITIK ESIK TESTI",
+            "desc": "Yasam esiginde - teorik minimum kosullar",
             "alpha": 0.32, "gamma": 0.08, "T": 0.18, "K0": 0.85,
             "grid_size": 12, "total_time": 150, "dt": 0.2
         }
@@ -72,17 +76,17 @@ def realistic_parameter_sweep():
             results.append(results_dict)
 
             # Detaylı analiz
-            print(f"   📊 SONUÇLAR:")
+            print(f"   📊 SONUCLAR:")
             print(f"      • Ortalama koherans: {results_dict['avg_coherence']:.3f}")
-            print(f"      • Koherans adaları: {results_dict['coherence_islands']}")
+            print(f"      • Koherans adalari: {results_dict['coherence_islands']}")
             print(f"      • Enerji: {results_dict['final_energy']:.1f}")
             print(f"      • Entropi: {results_dict['final_entropy']:.1f}")
             print(f"      • E-S Korelasyon: {results_dict['energy_entropy_correlation']:.3f}")
-            print(f"      • Yaşam-benzeri: {'EVET' if results_dict['life_like_organization'] else 'HAYIR'}")
+            print(f"      • Yasam-benzeri: {'EVET' if results_dict['life_like_organization'] else 'HAYIR'}")
 
             # Gelişmiş yaşam analizi
             life_status = analyze_life_likelihood(results_dict)
-            print(f"      • 🎯 YAŞAM OLASILIĞI: {life_status}")
+            print(f"      • 🎯 YASAM OLASILIGI: {life_status}")
 
         except Exception as e:
             print(f"   ❌ Hata: {e}")
@@ -99,41 +103,41 @@ def analyze_life_likelihood(results):
     # Koherans puanı
     if results['avg_coherence'] > 0.45:
         score += 3
-        feedback.append("Yüksek koherans ✅")
+        feedback.append("Yuksek koherans ✅")
     elif results['avg_coherence'] > 0.35:
         score += 2
         feedback.append("Orta koherans ⚠️")
     else:
-        feedback.append("Düşük koherans ❌")
+        feedback.append("Dusuk koherans ❌")
 
     # Ada puanı
     if results['coherence_islands'] >= 3:
         score += 3
-        feedback.append("Çoklu kararlı adalar ✅")
+        feedback.append("Coklu kararli adalar ✅")
     elif results['coherence_islands'] >= 2:
         score += 2
-        feedback.append("Kararlı ada oluşumu ⚠️")
+        feedback.append("Kararli ada olusumu ⚠️")
     else:
-        feedback.append("Yetersiz ada oluşumu ❌")
+        feedback.append("Yetersiz ada olusumu ❌")
 
     # Enerji-Entropi puanı
     corr = results['energy_entropy_correlation']
     if corr < -0.6:
         score += 3
-        feedback.append("Güçlü enerji-enformasyon dönüşümü ✅")
+        feedback.append("Guclu enerji-enformasyon donusumu ✅")
     elif corr < -0.4:
         score += 2
-        feedback.append("Orta enerji-enformasyon dönüşümü ⚠️")
+        feedback.append("Orta enerji-enformasyon donusumu ⚠️")
     else:
-        feedback.append("Zayıf enerji-enformasyon dönüşümü ❌")
+        feedback.append("Zayif enerji-enformasyon donusumu ❌")
 
     # Karar
     if score >= 7:
-        return "YÜKSEK - Güçlü yaşam-benzeri organizasyon 🎯"
+        return "YUKSEK - Guclu yasam-benzeri organizasyon 🎯"
     elif score >= 5:
-        return "ORTA - Zayıf yaşam-benzeri organizasyon 📈"
+        return "ORTA - Zayif yasam-benzeri organizasyon 📈"
     elif score >= 3:
-        return "DÜŞÜK - Ön-yaşamsal organizasyon 📉"
+        return "DUSUK - On-yasamsal organizasyon 📉"
     else:
         return "YOK - Kaotik durum ❌"
 
@@ -154,10 +158,10 @@ def plot_comprehensive_results(results):
     x_pos = np.arange(len(scenarios))
 
     axes[0, 0].bar(x_pos - 0.2, coherence, 0.4, label='Ortalama Koherans', alpha=0.7, color='blue')
-    axes[0, 0].bar(x_pos + 0.2, islands, 0.4, label='Koherans Adaları', alpha=0.7, color='green')
+    axes[0, 0].bar(x_pos + 0.2, islands, 0.4, label='Koherans Adalari', alpha=0.7, color='green')
     axes[0, 0].set_xlabel('Senaryolar')
-    axes[0, 0].set_ylabel('Değerler')
-    axes[0, 0].set_title('CQON Senaryo Karşılaştırması')
+    axes[0, 0].set_ylabel('Degerler')
+    axes[0, 0].set_title('CQON Senaryo Karsilastirmasi')
     axes[0, 0].set_xticks(x_pos)
     axes[0, 0].set_xticklabels([s[:15] + '...' for s in scenarios], rotation=45)
     axes[0, 0].legend()
@@ -166,9 +170,9 @@ def plot_comprehensive_results(results):
     # 2. Enerji-Entropi korelasyonu
     correlations = [r['energy_entropy_correlation'] for r in results]
     axes[0, 1].bar(range(len(scenarios)), correlations, color='purple', alpha=0.7)
-    axes[0, 1].axhline(y=-0.4, color='red', linestyle='--', label='Kritik Eşik')
+    axes[0, 1].axhline(y=-0.4, color='red', linestyle='--', label='Kritik Esik')
     axes[0, 1].set_xlabel('Senaryolar')
-    axes[0, 1].set_ylabel('Korelasyon Katsayısı')
+    axes[0, 1].set_ylabel('Korelasyon Katsayisi')
     axes[0, 1].set_title('Enerji-Entropi Korelasyonu (CQON)')
     axes[0, 1].set_xticks(range(len(scenarios)))
     axes[0, 1].set_xticklabels([s[:15] + '...' for s in scenarios], rotation=45)
@@ -179,8 +183,8 @@ def plot_comprehensive_results(results):
     if results:
         axes[1, 0].plot(results[0]['energy_history'], 'r-', label='Enerji', linewidth=2)
         axes[1, 0].plot(results[0]['entropy_history'], 'b-', label='Entropi', linewidth=2)
-        axes[1, 0].set_xlabel('Zaman Adımları')
-        axes[1, 0].set_ylabel('Değerler')
+        axes[1, 0].set_xlabel('Zaman Adimlari')
+        axes[1, 0].set_ylabel('Degerler')
         axes[1, 0].set_title(f"{results[0]['scenario']} - Zaman Evrimi")
         axes[1, 0].legend()
         axes[1, 0].grid(True, alpha=0.3)
@@ -197,8 +201,8 @@ def plot_comprehensive_results(results):
     colors = ['red' if s < 2 else 'orange' if s < 3 else 'green' for s in life_scores]
     axes[1, 1].bar(range(len(scenarios)), life_scores, color=colors, alpha=0.7)
     axes[1, 1].set_xlabel('Senaryolar')
-    axes[1, 1].set_ylabel('Yaşam Skoru (0-3)')
-    axes[1, 1].set_title('CQON Yaşam-Benzeri Organizasyon Skoru')
+    axes[1, 1].set_ylabel('Yasam Skoru (0-3)')
+    axes[1, 1].set_title('CQON Yasam-Benzeri Organizasyon Skoru')
     axes[1, 1].set_xticks(range(len(scenarios)))
     axes[1, 1].set_xticklabels([s[:15] + '...' for s in scenarios], rotation=45)
     axes[1, 1].grid(True, alpha=0.3)
@@ -211,35 +215,35 @@ def plot_comprehensive_results(results):
 def run_detailed_single_simulation():
     """Tek bir senaryoda detaylı analiz"""
     print("\n" + "=" * 60)
-    print("🔍 TEK SENARYO DETAYLI ANALİZ - CQON MODEL")
+    print("🔍 TEK SENARYO DETAYLI ANALIZ - CQON MODEL")
     print("=" * 60)
 
-    # Erken Dünya benzeri koşullar
+    # Erken Dünya benzeri koşullar - OPTIMIZE EDILMIS
     sim = CQONSimulation(
-        alpha=0.35, gamma=0.07, T=0.15, K0=0.9,
-        grid_size=12, total_time=100, dt=0.2
+        alpha=0.38, gamma=0.065, T=0.14, K0=0.95,  # Optimize parametreler
+        grid_size=14, total_time=120, dt=0.15
     )
 
-    print("📖 Senaryo: Erken Dünya Benzeri Koşullar")
-    print("   - Orta seviye termal gürültü")
-    print("   - Makul kuantum koheransı")
-    print("   - Doğal enerji akışı")
+    print("📖 Senaryo: OPTIMIZE EDILMIS ERKEN DUNYA")
+    print("   - Gelistirilmis rezonans hassasiyeti")
+    print("   - Azaltilmis dekoherans")
+    print("   - Optimize edilmis enerji akisi")
     print("   - CQON Teorisi: Enerji → Koherans → Enformasyon")
-    print("\n⏳ CQON simülasyonu çalışıyor...")
+    print("\n⏳ CQON simülasyonu calisiyor...")
 
     results = sim.run(verbose=True)
 
     # Ek analiz
     if results:
-        print(f"\n📈 DETAYLI ANALİZ:")
-        print(f"   • Başlangıç koherans: {results['coherence_history'][0]:.3f}")
+        print(f"\n📈 DETAYLI ANALIZ:")
+        print(f"   • Baslangic koherans: {results['coherence_history'][0]:.3f}")
         print(f"   • Maksimum koherans: {max(results['coherence_history']):.3f}")
-        print(f"   • Koherans artışı: {results['coherence_history'][-1] - results['coherence_history'][0]:.3f}")
-        print(f"   • Enerji kazanımı: {results['energy_history'][-1] - results['energy_history'][0]:.1f}")
-        print(f"   • Entropi azalımı: {results['entropy_history'][0] - results['entropy_history'][-1]:.1f}")
+        print(f"   • Koherans artisi: {results['coherence_history'][-1] - results['coherence_history'][0]:.3f}")
+        print(f"   • Enerji kazanimi: {results['energy_history'][-1] - results['energy_history'][0]:.1f}")
+        print(f"   • Entropi azalimi: {results['entropy_history'][0] - results['entropy_history'][-1]:.1f}")
 
         # Teori açıklaması
-        print(f"\n📖 CQON TEORİSİ ÖZETİ:")
+        print(f"\n📖 CQON TEORISI OZETI:")
         theory = results['theory_explanation']
         for key, value in theory.items():
             print(f"   • {key.replace('_', ' ').title()}: {value}")
@@ -249,25 +253,25 @@ def run_detailed_single_simulation():
 
 if __name__ == "__main__":
     # Tüm senaryoları test et
-    print("🚀 CQON Gerçekçi Test Başlatılıyor...")
+    print("🚀 CQON Gercekci Test Baslatiliyor...")
     print("🎯 Model: Coherent Quantum Oscillator Network")
     all_results = realistic_parameter_sweep()
 
-    # Detaylı tek senaryo analizi
+    # Detaylı tek senaryo analizi - OPTIMIZE ERKEN DUNYA
     detailed_results = run_detailed_single_simulation()
 
     # Görselleştirme
     if all_results:
-        print("\n📊 Sonuçlar görselleştiriliyor...")
+        print("\n📊 Sonuclar görselleştiriliyor...")
         plot_comprehensive_results(all_results)
 
-        print("\n✅ CQON GERÇEKÇİ TEST TAMAMLANDI!")
+        print("\n✅ CQON GERCEKCI TEST TAMAMLANDI!")
         print("📁 'realistic_cqon_analysis.png' kaydedildi")
 
         # İstatistiksel özet
         successful_simulations = len(all_results)
         life_like_count = sum(1 for r in all_results if r.get('life_like_organization', False))
-        print(f"📊 İSTATİSTİK: {successful_simulations} simülasyon, {life_like_count} yaşam-benzeri")
+        print(f"📊 ISTATISTIK: {successful_simulations} simulasyon, {life_like_count} yasam-benzeri")
 
     else:
-        print("\n❌ Test sonuç alınamadı!")
+        print("\n❌ Test sonuc alinamadi!")
