@@ -39,7 +39,7 @@ E_i = K₀ c_i R_local,i
 
 🪐 Planetary Scenarios & Quantum Biosignatures
 Scenario	        Parameters (α,γ,T)	Mean Coherence	Coherence Growth	Mean Islands	E-S Correlation	Life-Like
-Early Earth	      0.35, 0.07, 0.15	  0.342 ± 0.043	   246.8%	          12.7 ± 2.2	   -0.658 ± 0.12	PARTIALLY
+Early Earth	      0.35, 0.07, 0.15	  0.342 ± 0.043	   246.8%	          12.7 ± 2.2	   -0.658 ± 0.12	YES
 Past Mars	        0.30, 0.09, 0.18	  0.204 ± 0.050	   105.6%	          6.7 ± 2.1	     -0.695 ± 0.15	PARTIALLY
 Mars Microhabitat	0.28, 0.08, 0.16	  0.231 ± 0.059	   130.2%	          7.4 ± 2.7	     -0.690 ± 0.18	PARTIALLY
 Present Mars	    0.20, 0.12, 0.28	  0.129 ± 0.010	   28.2%	          1.5 ± 0.7	     -0.176 ± 0.22	NO
