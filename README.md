@@ -9,7 +9,7 @@
 
 The **Coherent Quantum Oscillator Network (CQON)** model is a novel physics-based framework that explains how quantum coherence mediates the conversion from energy to structured information - the fundamental process underlying life's emergence. This model provides universal biosignature criteria applicable to Mars, exoplanets, and diverse planetary environments.
 
-> **Key Insight**: Quantum coherence serves as a universal biosignature, with measurable thresholds distinguishing habitable from non-habitable environments across planetary systems.
+> **Key Insight**: Quantum coherence serves as a universal biosignature, with unified thresholds (⟨c⟩>0.30, islands>3, r<-0.45) enabling consistent HIGH/MEDIUM/LOW/NO classification of planetary habitability.
 
 ## 📚 Associated Publications
 
@@ -59,18 +59,18 @@ E_i = K₀ c_i R_local,i
 
 Scenario	Parameters (α,γ,T)	Mean Coherence	Coherence Growth	Mean Islands	E-S Correlation	Life-Like
 Early Earth	0.35, 0.07, 0.15	0.342 ± 0.043	246.8%	12.7 ± 2.2	-0.658 ± 0.12	✅ YES
-Past Mars	0.30, 0.09, 0.18	0.204 ± 0.050	105.6%	6.7 ± 2.1	-0.695 ± 0.15	⚠️ PARTIALLY
-Mars Microhabitat	0.28, 0.08, 0.16	0.231 ± 0.059	130.2%	7.4 ± 2.7	-0.690 ± 0.18	⚠️ PARTIALLY
+Past Mars	0.30, 0.09, 0.18	0.204 ± 0.050	105.6%	6.7 ± 2.1	-0.695 ± 0.15	⚠️ MEDIUM
+Mars Microhabitat	0.28, 0.08, 0.16	0.231 ± 0.059	130.2%	7.4 ± 2.7	-0.690 ± 0.18	⚠️ MEDIUM
 Present Mars	0.20, 0.12, 0.28	0.129 ± 0.010	28.2%	1.5 ± 0.7	-0.176 ± 0.22	❌ NO
 
 📈 Critical Thresholds for Planetary Habitability
 The model identifies three universal thresholds for life-like organization:
 
-Coherence Threshold: Mean coherence > 0.25
+Coherence Threshold: Mean coherence > 0.30
 
-Island Formation: >5 coherence islands
+Island Formation: >3 coherence islands
 
-Energy-Information: Strong negative correlation r < -0.5
+Energy-Information: Strong negative correlation r < -0.45
 
 🔬 Mars-Specific Findings
 Statistical Significance Analysis
@@ -81,11 +81,9 @@ Early Earth vs Mars Microhabitat: t(28) = 5.688, p < 0.0001, Cohen's d = 2.150 (
 Early Earth vs Present Mars: t(28) = 18.045, p < 0.0001, Cohen's d = 6.820 (Very Large Effect)
 
 Mars Triage Classification
-✅ Past Mars: Potentially habitable during Noachian period
-
-⚠️ Mars Microhabitat: Localized habitable niches in subsurface environments
-
-❌ Present Mars: Non-habitable surface conditions
+✅ **HIGH**: Early Earth - Optimal biogenesis conditions
+⚠️ **MEDIUM**: Past Mars & Microhabitats - Partial organization potential  
+❌ **NO**: Present Mars - Non-habitable surface
 
 📊 Generated Figures
 Core Analysis Figures
@@ -191,6 +189,13 @@ Quantum Habitable Zone: Complement to traditional circumstellar habitable zones
 Mars Exploration Targeting: Identifies specific locations for coherence signature detection
 
 Universal Life Detection: Physics-based approach beyond chemical biosignatures
+
+**Classification System:**
+- **HIGH**: All 3 criteria satisfied (Early Earth, Optimal Quantum, Ocean Depth)
+- **MEDIUM**: 2/3 criteria satisfied (Past Mars, Mars Microhabitat, Critical Threshold)  
+- **LOW**: 1/3 criteria satisfied (High Noise)
+- **NO**: No criteria satisfied (Present Mars)
+
 
 📞 Contact
 Akın Söylemez
