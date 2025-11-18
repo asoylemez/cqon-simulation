@@ -1,3 +1,8 @@
+> **Research Status**: Theoretical Framework Proposing Novel Concepts - Seeking Experimental Collaboration  
+> This repository contains conceptual models and simulations proposing quantum coherence as a biosignature framework. Parameters are empirically calibrated using NASA Mars mission data. We welcome research partnerships for experimental validation.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17623520.svg)](https://doi.org/10.5281/zenodo.17623520)
+
 <!-- Banner Header -->
 <div align="center">
 
